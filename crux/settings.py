@@ -14,7 +14,8 @@ else:
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('CRUX_ALLOWED_HOSTS')\
+                          .split(':')
 
 INSTALLED_APPS = (
     'django.contrib.admin',
