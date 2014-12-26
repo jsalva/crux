@@ -9,10 +9,12 @@ class TestModuleImports(TestCase):
     def test_userdata_imports(self):
         from userdata import *
         from userdata.models import UserData
+        from userdata.signals import create_related
         from userdata.api1 import *
-        from userdata.api1.serializers import UserDataSerializer
-        from userdata.api1.views import UserDataViewSet
-        from userdata.api1.routers import userdata_router
+        from userdata.api1.serializers import (UserSerializer,
+                                               UserDataSerializer)
+        from userdata.api1.views import UserViewSet
+        from userdata.api1.routers import user_router
         from userdata.api1.urls import urlpatterns
 
 

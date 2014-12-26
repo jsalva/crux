@@ -1,12 +1,12 @@
 from __future__ import absolute_import
 
+from django.contrib.auth.models import User
+
 from rest_framework import viewsets
 
-from .serializers import UserDataSerializer
-from ..models import UserData
+from .serializers import UserSerializer
 
 # Create your views here.
-class UserDataViewSet(viewsets.ModelViewSet):
-    queryset = UserData.objects.all()
-    serializer_class = UserDataSerializer
-
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
