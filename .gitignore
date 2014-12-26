@@ -56,4 +56,4 @@ target/
 # etc
 *.pid
 compiled_static/
-
+*.sqlite3
