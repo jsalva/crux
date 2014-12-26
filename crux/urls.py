@@ -3,5 +3,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api1/', include('crux.api1', namespace='api1')),
     url(r'^$', 'crux.views.index'),
 )

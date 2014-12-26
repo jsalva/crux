@@ -1,21 +1,18 @@
 from __future__ import absolute_import
 import os
 
+from .utils import get_env_variable
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-SECRET_KEY = os.environ.get('CRUX_SECRET_KEY')
+SECRET_KEY = get_env_variable('CRUX_SECRET_KEY')
 
-DEBUG = os.environ.get('CRUX_DEBUG')
-
-if DEBUG.lower() == 'true':
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = get_env_variable('CRUX_DEBUG')
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = os.environ.get('CRUX_ALLOWED_HOSTS')\
-                          .split(':')
+ALLOWED_HOSTS = get_env_variable('CRUX_ALLOWED_HOSTS')\
+                    .split(':')
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -24,9 +21,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli',
+    'guardian',
     'threejs',
     'userdata',
+    'django_extensions',
+    'rest_framework',
 )
+
+ANONYMOUS_USER_ID = -1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -44,9 +47,13 @@ WSGI_APPLICATION = 'crux.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'transaction_hooks.backends.mysql',
+        'NAME': get_env_variable('DATABASE_NAME'),
+        'USER': get_env_variable('DATABASE_USER'),
+        'PASSWORD': get_env_variable('DATABASE_PASSWORD'),
+        'HOST': get_env_variable('DATABASE_HOST'),
+        'PORT': get_env_variable('DATABASE_PORT'),
+    },
 }
 
 LANGUAGE_CODE = 'en-us'
