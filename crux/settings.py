@@ -24,6 +24,7 @@ INSTALLED_APPS = (
     'grappelli',
     'guardian',
     'threejs',
+    'emberjs',
     'userdata',
     'django_extensions',
     'rest_framework',
