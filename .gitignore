@@ -57,3 +57,4 @@ target/
 *.pid
 compiled_static/
 *.sqlite3
+*.DS_Store
