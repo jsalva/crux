@@ -28,6 +28,7 @@ INSTALLED_APPS = (
     'userdata',
     'django_extensions',
     'rest_framework',
+    'social_auth'
 )
 
 ANONYMOUS_USER_ID = -1
@@ -76,3 +77,19 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     #    'django.template.loaders.eggs.Loader',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+TWITTER_CONSUMER_KEY = get_env_variable('TWITTER_KEY')
+TWITTER_CONSUMER_SECRET = get_env_variable('TWITTER_SECRET')
+FACEBOOK_APP_ID = get_env_variable('FACEBOOK_KEY')
+FACEBOOK_API_SECRET = get_env_variable('FACEBOOK_SECRET')
+GOOGLE_OAUTH2_CLIENT_ID = get_env_variable('GOOGLE_KEY')
+GOOGLE_OAUTH2_CLIENT_SECRET = get_env_variable('GOOGLE_SECRET')
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
