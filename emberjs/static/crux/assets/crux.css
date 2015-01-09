@@ -1,3 +1,7 @@
+body {
+  padding-top: 70px;
+}
+
 .navbar-logo {
   height:50px
 }
@@ -25,8 +29,12 @@
   max-height:300px;
 }
 
-body {
-  padding-top: 70px;
+.maxwidth-50{
+  max-width: 50%;
+}
+
+#headerwrap {
+  padding-top: 100px;
 }
 
 .abscenter {
@@ -40,6 +48,9 @@ body {
   top: 0;
   bottom: 0;
 }
+
+/* auth form styles */
+
 @media (min-width: 768px) {
   .omb_row-sm-offset-3 div:first-child[class*="col-"] {
     margin-left: 25%;
@@ -97,10 +108,28 @@ body {
   color: red;
 }
 
-
 @media (min-width: 768px) {
   .omb_login .omb_forgotPwd {
     text-align: right;
     margin-top:10px;
   }
+}
+
+/* modal styles */
+.modal {
+  margin-top: 100px;
+}
+
+.modal-content{
+  border-radius: 0;
+  border: none;
+}
+
+.modal-content .modal-header {
+  background-color: #3498db;
+  padding: 10px;
+}
+
+.modal-content .modal-header h4 {
+  color: #f2f2f2;
 }

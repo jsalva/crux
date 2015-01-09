@@ -15,10 +15,11 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>{{#link-to 'login'}}login{{/link-to}}</li>
-        <li><a>|</a></li>
+        <li class='hidden-xs'><a>|</a></li>
         <li>{{#link-to 'signup'}}signup{{/link-to}}</li>
       </ul>
     </div><!--/.nav-collapse-->
   </div>
 </div>
 {{outlet}}
+{{outlet modal}}

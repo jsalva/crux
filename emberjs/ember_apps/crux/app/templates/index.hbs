@@ -1,18 +1,15 @@
 <div id="headerwrap">
 <div class="container">
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 centered">
       <h1>Climbing gear delivered <br>
          at the drop of a dime.</h1>
       <form class="form-inline" role="form">
-        <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="your email address">
-        </div>
-        <button type="submit" class="btn btn-warning btn-lg">Invite me!</button>
+        {{#link-to "signup" classNames="btn btn-warning btn-lg" }}Sign me up!{{/link-to}}
       </form>
     </div><!--/col-lg-6-->
-    <div class="col-lg-6">
-      <img class="img-responsive" src="/static/crux/assets/img/ipad-hand.png" alt="">
+    <div class="col-lg-6 mt">
+      <img class="img-responsive center-block maxwidth-50" src="/static/crux/assets/img/hand-iphone-store.svg" alt="use your andriod or iphone to manage your climbing gear">
     </div><!--/col-lg-6-->
 
   </div><!--/row-->
@@ -56,10 +53,7 @@
 <div class="row centered">
   <div class="col-lg-6 col-lg-offset-3">
     <form class="form-inline" role="form">
-      <div class="form-group">
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="your email address">
-      </div>
-      <button type="submit" class="btn btn-warning btn-lg">Seriously, invite me!</button>
+      {{#link-to "signup" classNames="btn btn-warning btn-lg" }}Seriously, sign me up!{{/link-to}}
     </form>
   </div>
   <div class="col-lg-3"></div>
@@ -71,7 +65,7 @@
 <div class="row mt centered">
   <div class="col-lg-6 col-lg-offset-3">
     <h1>Hassle-Free Climbing Gear</h1>
-    <h3>Worry more about climbing and less about logistics. We'll help you manage your stash of gear, so you can focus on having fun.</h3>
+    <h3>We'll help you manage your stash of gear, so you can worry less about logistics and more about climbing.</h3>
   </div>
 </div><!--/row-->
 
@@ -107,10 +101,7 @@
 <div class="row centered">
   <div class="col-lg-6 col-lg-offset-3">
     <form class="form-inline" role="form">
-      <div class="form-group">
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="your email address">
-      </div>
-      <button type="submit" class="btn btn-warning btn-lg">Invite me already!</button>
+      {{#link-to "signup" classNames="btn btn-warning btn-lg" }}Sign me up already!{{/link-to}}
     </form>
   </div>
   <div class="col-lg-3"></div>
@@ -122,21 +113,25 @@
 <div class="row mt centered">
   <div class="col-lg-6 col-lg-offset-3">
     <h1>We're climbers too.</h1>
-    <h3>Living in New York is cramped enough without an epic pile of smelly climbing gear to greet you daily. We needed a way to store our gear and access it quickly. <br><br> That's why we founded crux.</h3>
+    <h3>My apartment was cramped enough without that pile of smelly climbing gear. I needed a way to store gear, but also access it quickly. <br><br> That's why I founded crux.</h3>
   </div>
 </div><!--/row-->
 
 <div class="row mt centered">
   <div class="col-lg-12">
-    <img class="img-circle" src="/static/crux/assets/img/pic1.jpg" width="140" alt="">
+    <img class="img-circle" src="/static/crux/assets/img/pic1.jpg" width="140" alt="John Salvatore, founder and CEO">
     <h4>John Salvatore</h4>
     <p>"The best climber in the world is the one who's having the most fun"</p>
-    <p><i class="glyphicon glyphicon-send"></i> <i class="glyphicon glyphicon-phone"></i> <i class="glyphicon glyphicon-globe"></i></p>
+    <p>
+      <a href="mailto:jsalva@mit.edu"><i class="glyphicon glyphicon-send"></i></a>
+      <a href="tel:+2014037041"><i class="glyphicon glyphicon-phone"></i></a>
+      <a href="http://www.crux.nyc"><i class="glyphicon glyphicon-globe"></i></a>
+    </p>
   </div><!--/col-lg-4-->
 </div><!--/row-->
 </div><!--/container-->
 
 <div class="container">
 <hr>
-<p class="centered">crux.nyc - 2015</p>
+<p class="centered"><a href="http://www.crux.nyc">crux.nyc</a> - 2015</p>
 </div><!--/container-->
