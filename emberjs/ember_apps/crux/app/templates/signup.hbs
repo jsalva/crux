@@ -34,23 +34,30 @@
         <form class="omb_loginForm" action="" autocomplete="off" method="POST">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input type="text" class="form-control" name="username" placeholder="email">
+            {{input value=email type="text" class="form-control" name="email" placeholder="email"}}
+          </div>
+
+          <span class="help-block">
+            {{#unless emailIsValid}}invalid email{{/unless}}
+          </span>
+
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            {{input value=password1 type="password" class="form-control" name="password1" placeholder="password"}}
           </div>
           <span class="help-block"></span>
 
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input  type="password" class="form-control" name="password1" placeholder="password">
+            {{input value=password2 type="password" class="form-control" name="password2" placeholder="confirm password"}}
           </div>
-          <span class="help-block"></span>
 
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input  type="password" class="form-control" name="password2" placeholder="confirm password">
-          </div>
-          <span class="help-block">passwords do not match</span>
+          <span class="help-block">
+            {{#unless passwordsMatch}}passwords do not match {{/unless}}
+          </span>
 
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          <button class="btn btn-lg btn-primary btn-block" {{bindAttr disabled="disableSubmit"}} type="submit">Login</button>
+
         </form>
       </div>
     </div>
