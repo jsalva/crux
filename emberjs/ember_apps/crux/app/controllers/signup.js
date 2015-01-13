@@ -23,7 +23,18 @@ var SignupController = Ember.ObjectController.extend({
         password1 = this.get('password1'),
         password2 = this.get('password2');
         return !email || !password1 || !password2 || !emailIsValid || !passwordsMatch;
-  }.property('email','password1','password2','emailIsValid','passwordsMatch')
+  }.property('email','password1','password2','emailIsValid','passwordsMatch'),
+  actions: {
+    signup: function(){
+      var data = {
+        email: this.get('email'),
+        password: this.get('password1')
+      };
+      Ember.$.post('/api1/auth/', data).then(function(response){
+        alert(response);
+      });
+    }
+  }
 });
 
 export default SignupController;
