@@ -23,12 +23,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'grappelli',
     'guardian',
-    'threejs',
-    'emberjs',
-    'userdata',
     'django_extensions',
     'rest_framework',
-    'social_auth'
+    'crux'
 )
 
 ANONYMOUS_USER_ID = -1
